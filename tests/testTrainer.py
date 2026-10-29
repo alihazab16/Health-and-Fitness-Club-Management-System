@@ -1,7 +1,7 @@
 
 from datetime import datetime
 
-from trainer import set_availability
+from app.trainer import set_availability
 
 
 # First slot

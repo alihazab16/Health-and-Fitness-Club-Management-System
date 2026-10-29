@@ -1,18 +1,20 @@
 from datetime import datetime
-from sqlalchemy import(
+
+from sqlalchemy import (
     CheckConstraint,
     DateTime,
     ForeignKey,
     Integer,
 )
 
-from sqlalchemy.orm import Mapped,mapped_column
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
 
 
 class TrainerAvailability(Base):
     __tablename__ = "trainer_availability"
+
     availability_id: Mapped[int] = mapped_column(
         Integer,
         primary_key=True

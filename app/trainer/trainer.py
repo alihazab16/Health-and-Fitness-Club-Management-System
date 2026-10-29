@@ -3,7 +3,8 @@ from datetime import datetime
 from sqlalchemy import select
 
 from database import SessionLocal
-from models import TrainerAvailability
+from app.database import SessionLocal
+from app.models.trainer_availability import TrainerAvailability
 
 def set_availability(
     trainer_id: int,
