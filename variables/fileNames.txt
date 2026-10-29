@@ -1,0 +1,5 @@
+Suggesting File names and variables we have to incorporate go here(
+    since we have to share variable names and variables in this 
+    project add all the important ones in here that you know are going to be used more than once):
+
+    
