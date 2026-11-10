@@ -12,5 +12,16 @@ class Trainer(Base):
         primary_key=True
     )
 
-    # Add the remaining Trainer columns
-    # based on your team's ERD
+    first_name: Mapped[str] = mapped_column(
+        String(50),
+        nullable=False
+    )
+
+    last_name: Mapped[str] = mapped_column(
+        String(50),
+        nullable=False
+    )
+
+    @property
+    def full_name(self)-> str:
+        return f"{self.first_name} {self.last_name}"

@@ -4,6 +4,7 @@ from sqlalchemy import select
 
 from app.database import SessionLocal
 from app.models.trainer_availability import TrainerAvailability
+from app.models.PTSession import PTSession
 
 def set_availability(
     trainer_id: int,
@@ -43,8 +44,18 @@ def set_availability(
 
         return "Availability saved successfully."
 
-def Schedule_view():
-    pass
+def view_schedule(trainer_id: int) -> list[PTSession]:
+
+    with SessionLocal() as db:
+
+        # Find all sessions belonging to this trainer
+        sessions = db.scalars(
+            select(PTSession)
+            .where(PTSession.trainer_id == trainer_id)
+            .order_by(PTSession.start_time)
+        ).all()
+
+        return list(sessions)
 
 
 def Member_lookUp():
